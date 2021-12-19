@@ -55,6 +55,11 @@ body{
  .profile-container ul button{
      color: hsl(var(--des-blue));
      text-decoration: none;
+    
+ }
+
+ .profile-container ul button li{
+    margin-right: 70px;
  }
  
 
