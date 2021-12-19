@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+
+  <Section class="container">
+
+    <div class="profile-container border">
+      <div class="profile-top border">
+        <img src="images/image-jeremy.png" width="65px" alt="">
+
+        <div class="info">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
+      </div>
+
+      <ul>
+        <button id="daily"><li>Daily</li></button>
+        <button id="weekly"><li>Weekly</li></button>
+        <button id= "monthly"><li>Monthly</li></button>
+      </ul>
+    </div>
+
+    <!-- <div class="cards"> -->
+
+              <!-- <div class="card-top"> -->
+
+                    <div class="work detail border">
+                      <div class="image">
+                        <img src="images/icon-work.svg"  width="60px"alt="">
+                      </div>
+                      
+                
+                      <div class=" detail-info border">
+                        <ul>
+                          <li>Work</li>
+                          <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                        </ul>
+
+                        <div class="card-details">
+                          <h1 > <span  id="workcurrent" ></span>hrs</h1>
+                        <p >Lastweek- <span id="workprevious"></span> hrs</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                
+                    
+                
+                    <!-- Play div  -->
+                
+                    <div class="play detail border">
+                      <div class="image">
+                        <img src="images/icon-play.svg"  width="60px"alt="">
+                      </div>
+                      
+                
+                      <div class=" detail-info border">
+                        <ul>
+                          <li>Play</li>
+                          <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                        </ul>
+                        
+                        <div class="card-details">
+                          <h1 > <span id="playcurrent"></span> hrs</h1>
+                        <p >Lastweek- <span id="playprevious"></span> hrs</p>
+                        </div>
+                      </div>
+                    </div>
+                
+                
+                    <!-- Study div -->
+                  
+                
+                    <div class="Study detail border">
+                      <div class="image">
+                        <img src="images/icon-study.svg"  width="60px"alt="">
+                      </div>
+                      
+                
+                      <div class=" detail-info border">
+                        <ul>
+                          <li>Study</li>
+                          <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                        </ul>
+                        
+                        <div class="card-details">
+                          <h1 > <span id="studycurrent"></span> hrs</h1>
+                        <p >Lastweek- <span id="studyprevious"></span> hrs</p>
+                        </div>
+                      </div>
+                    </div>
+                
+              <!-- </div> -->
+              
+              <!-- <div class="card-down"> -->
+                <div class="exercise detail border">
+                  <div class="image">
+                    <img src="images/icon-exercise.svg "  width="100px"alt="">
+                  </div>
+                  
+            
+                  <div class=" detail-info border">
+                    <ul>
+                      <li>Exercise</li>
+                      <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                    </ul>
+                     
+                    <div class="card-details">
+                      <h1 > <span id="exercisecurrent"></span> hrs</h1>
+                    <p >Lastweek- <span id="exerciseprevious"></span> hrs</p>
+                    </div>
+                  </div>
+                </div>
+            
+                
+            
+                <!-- Play div  -->
+            
+                <div class="social detail border">
+                  <div class="image">
+                    <img src="images/icon-social.svg"  width="50px"alt="">
+                  </div>
+                  
+            
+                  <div class=" detail-info border">
+                    <ul>
+                      <li>Social</li>
+                      <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                    </ul>
+                     
+                    <div class="card-details">
+                      <h1 > <span id="socialcurrent"></span> hrs</h1>
+                    <p >Lastweek- <span id="socialprevious"></span> hrs</p>
+                    </div>
+                  </div>
+                </div>
+            
+            
+                <!-- Study div -->
+              
+            
+                <div class="self-care detail border">
+                  <div class="image">
+                    <img src="images/icon-self-care.svg"  width="60px"alt="">
+                  </div>
+                  
+            
+                  <div class=" detail-info border">
+                    <ul>
+                      <li>SelfCare</li>
+                      <li><img src="images/icon-ellipsis.svg"  alt=""></li>
+                    </ul>
+
+                    <div class="card-details">
+                      <h1 ><span id="selfcarecurrent"></span> hrs</h1>
+                    <p>Lastweek- <span id="selfcareprevious" ></span> hrs</p>
+                    </div>
+                  </div>
+                </div>
+
+
+              <!-- </div> -->
+          
+
+            <!-- </div> -->
+
+   
+
+
+
+
+            <div class="attribution">
+              Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+              Coded by <a href="#">Your Name Here</a>.
+            </div>
+
+
+  </Section>
+
+
+ 
+  
+
+  
+ <script>
+
+   const workCurrent = document.getElementById('workcurrent');
+   const workPrevious = document.getElementById('workprevious');
+
+   const playCurrent =document.getElementById('playcurrent');
+   const playPrevious = document.getElementById('playprevious');
+
+   const studyCurrent =document.getElementById('studycurrent');
+   const studyPrevious = document.getElementById('studyprevious');
+
+   const exerciseCurrent = document.getElementById('exercisecurrent');
+   const exercisePrevious = document.getElementById('exerciseprevious');
+
+   const socialCurrent = document.getElementById('socialcurrent');
+   const socialPrevious = document.getElementById('socialprevious');
+
+   const selfCareCurrent = document.getElementById('selfcarecurrent');
+   const selfCarePrevious = document.getElementById('selfcareprevious');
+
+
+ 
+
+// Fetching data from the data.jsonfile
+
+
+ const UpdateContent =() => {
+  fetch("./data.json")
+        .then((res) => res.json())
+        .then((data) => 
+            data.forEach(item => {
+               let itemTimeFrame = item.timeframes.daily;
+              
+               if(frequency === "Weekly")
+                 itemTimeFrame = item.timeframes.weekly;
+               
+               if(frequency === "Monthly")
+                 itemTimeFrame =item.timeframes.monthly;
+          
+
+             
+
+             switch (item.title){
+               case  'Work' : 
+                workCurrent.innerText = itemTimeFrame.current;
+                workPrevious.innerText = itemTimeFrame.previous;
+
+                case 'Play':
+                playCurrent.innerText = itemTimeFrame.current
+                playPrevious.innerText = itemTimeFrame.previous;  
+                
+                case 'Study':
+                studyCurrent.innerText = itemTimeFrame.current
+                studyPrevious.innerText = itemTimeFrame.previous;
+                
+                case 'Exercise':
+                exerciseCurrent.innerText = itemTimeFrame.current
+                exercisePrevious.innerText = itemTimeFrame.previous;
+
+                case 'Social':
+                socialCurrent.innerText = itemTimeFrame.current
+                socialPrevious.innerText = itemTimeFrame.previous;
+
+                case 'Self Care':
+                selfCareCurrent.innerText = itemTimeFrame.current
+                selfCarePrevious.innerText = itemTimeFrame.previous;
+                
+                break; 
+                
+
+             }
+            })
+          
+         
+        )
+        .catch((err) => console.error(err));
+      };
+
+      UpdateContent();
+
+       let frequency = "Daily";
+
+        //  frequency Buttons
+
+      const dailyBtn = document.querySelector("#daily");
+      const weeklyBtn = document.querySelector("#weekly");
+      const monthlyBtn = document.querySelector("#monthly");
+
+
+      dailyBtn.addEventListener("click",()=>{
+        frequency = 'Daily';
+        UpdateContent();
+      });
+
+      weeklyBtn.addEventListener("click",()=>{
+        frequency = 'Weekly';
+        UpdateContent();
+       
+      });
+
+      
+      monthlyBtn.addEventListener("click",()=>{
+        frequency = 'Monthly';
+        UpdateContent();
+      });
+
+ </script>
+  
+  
+</body>
+</html>

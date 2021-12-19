@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <p id="workCurrent">00</p>
+    <p id="workPrevious">00</p>
+    <p id="playCurrent">00</p>
+    <p id="playPrevious">00</p>
+
+    <button id="daily">Daily</button>
+    <button id="weekly">Weekly</button>
+    <button id="monthly">Monthly</button>
+    <script>
+      const workCurrent = document.querySelector("#workCurrent");
+      const workPrevious = document.querySelector("#workPrevious");
+
+      const playCurrent = document.querySelector("#playCurrent");
+      const playPrevious = document.querySelector("#playPrevious");
+
+      const writeDataToDom = () => {
+        fetch("./data.json")
+          .then((res) => res.json())
+          .then((data) =>
+            data.forEach((item) => {
+              let itemTimeFrames = item.timeframes.daily;
+              if (frequency === "Weekly")
+                itemTimeFrames = item.timeframes.weekly;
+              if (frequency === "Monthly")
+                itemTimeFrames = item.timeframes.monthly;
+
+              switch (item.title) {
+                case "Work":
+                  workCurrent.innerText = itemTimeFrames.current;
+                  workPrevious.innerText = itemTimeFrames.previous;
+                case "Play":
+                  playCurrent.innerText = itemTimeFrames.current;
+                  playPrevious.innerText = itemTimeFrames.previous;
+                  break;
+                default:
+                // console.log(`Sorry, we are out of ${item.title}.`);
+              }
+            })
+          )
+          .catch((err) => console.error(err));
+      };
+
+      writeDataToDom(); // for first time render
+
+      let frequency = "Daily"; // Daily | Weekly | Monthly
+
+      const dailyBtn = document.querySelector("#daily");
+      const weeklyBtn = document.querySelector("#weekly");
+      const monthlyBtn = document.querySelector("#monthly");
+
+      dailyBtn.addEventListener("click", () => {
+        frequency = "Daily";
+        writeDataToDom();
+      });
+
+      weeklyBtn.addEventListener("click", () => {
+        frequency = "Weekly";
+        writeDataToDom();
+      });
+
+      monthlyBtn.addEventListener("click", () => {
+        frequency = "Monthly";
+        writeDataToDom();
+      });
+    </script>

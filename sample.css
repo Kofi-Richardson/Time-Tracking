@@ -1,0 +1,33 @@
+ *{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+ 
+ 
+ .first-box
+ {  display: flex;
+    
+     border: 3px solid #a31b1b;
+     width: 1300px;
+     height: 400px;
+     margin: 50px;
+ }
+ .third-box{
+     
+     
+    
+     border: 3px solid #8411a7;
+     width: 300px;
+     height: 100px;
+     
+     
+ }
+
+ .second-box{
+    border: 3px solid #0cdf39;
+    width: 300px;
+    height: 100px;
+    
+    
+ }
